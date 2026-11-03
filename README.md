@@ -1,23 +1,72 @@
-# SigmaOS Process
+# SigmaOS-process
 
-Rust library for process-related models and APIs. The crate exports process
-identity allocation, lifecycle states, process tables, and manager types; its
-modules also cover scheduling, spawning, IPC, resource limits, and Linux process
-interfaces.
+SigmaOS critical system component inspired by Arch Linux and Debian architecture.
 
-## API and integration limits
+## Overview
 
-The Rust models do not by themselves establish that SigmaOS can create or
-isolate host processes, enforce scheduling policy, or perform kernel syscalls.
-The process lifecycle tracker is an in-memory state model. Treat OS integration,
-resource enforcement, PID synchronization, and crash recovery as unverified
-until each path has implementation evidence and target-level validation.
+This component provides essential functionality for the SigmaOS operating system,
+following the modular design principles of Arch Linux and the stability focus of Debian.
 
-Keep the lifecycle transitions and ownership rules explicit. Process creation,
-exit, wait/reap, and resource cleanup need defined failure behavior; scheduling
-policy should remain separate from process identity and table bookkeeping.
+## Features
 
-## Development
+- Asynchronous I/O with Tokio
+- Comprehensive error handling with anyhow
+- Structured logging
+- Configuration management
+- Status monitoring
+- CLI interface with clap
 
-The crate depends on `SigmaOS-kernel` through a sibling path dependency. CI
-resolves SigmaOS path dependencies and runs `cargo test --all-targets --locked`.
+## Installation
+
+```bash
+cargo build --release
+cargo install --path .
+```
+
+## Usage
+
+```bash
+# Initialize the component
+process init
+
+# Start the component
+process start
+
+# Stop the component
+process stop
+
+# Check status
+process status
+
+# Run the component
+process run
+```
+
+## Configuration
+
+The component can be configured via environment variables or configuration files.
+
+## Building
+
+```bash
+cargo build --release
+```
+
+## Testing
+
+```bash
+cargo test
+```
+
+## License
+
+MIT License - See LICENSE file for details.
+
+## Contributing
+
+See CONTRIBUTING.md for guidelines.
+
+## Links
+
+- Repository: https://github.com/AaryanSinghChauhan09/SigmaOS-process
+- SigmaOS: https://github.com/AaryanSinghChauhan09
