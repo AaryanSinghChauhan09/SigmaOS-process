@@ -1,0 +1,16 @@
+[component]
+name = "SigmaOS-process"
+tier = 0
+stability = "scaffold"
+language = "rust"
+description = "Process descriptor lifecycle, thread scheduler, signal delivery, and capability tables"
+upstream = ["https://github.com/Rust-for-Linux/linux"]
+
+[contract]
+provides = ["process-lifecycle", "thread-scheduler", "signal-dispatcher"]
+depends_on = []
+
+[maturity]
+status = "Scaffold"
+test_evidence = "Compiles and passes AAA unit tests"
+next_milestone = "Hardware and runtime integration"
