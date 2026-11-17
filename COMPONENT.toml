@@ -1,7 +1,7 @@
 [component]
 name = "SigmaOS-process"
 tier = 0
-stability = "scaffold"
+stability = "beta"
 language = "rust"
 description = "Process component for SigmaOS"
 upstream = ["https://github.com/Rust-for-Linux/linux"]
@@ -11,6 +11,6 @@ provides = ["process-lifecycle", "thread-scheduler", "signal-dispatcher"]
 depends_on = ["SigmaOS-system"]
 
 [maturity]
-status = "Scaffold"
+status = "Implemented"
 test_evidence = "Compiles and passes AAA unit tests"
 next_milestone = "Hardware and runtime integration"
